@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class SimpleHashFunc extends JPanel implements ActionListener
 {
-	private static final int  cut = 10; // limit 
+	private static final int  cut = 6; // the output length 
 	private JLabel lbl_result;
-	private JButton btnChooseFile,btnProcess;
+	private JButton btnProcess;
 	private JTextField txt_xor;
 	public SimpleHashFunc()
 	{
@@ -58,14 +58,12 @@ public class SimpleHashFunc extends JPanel implements ActionListener
 
 	}
 
-	public static String simple_hash_func(String hash_input)
+	public static String simple_hash_func(String biometric_value)
 	{
 
-		//		final int  cut = 5; // limit 
-		//		Scanner scan = new Scanner(System.in);
-		//		String hash_input = scan.nextLine(); // input
+		
 
-		if(check_input(hash_input))
+		if(check_input(biometric_value))
 		{
 			System.out.println("worng input");
 			return "worng input";
@@ -73,7 +71,7 @@ public class SimpleHashFunc extends JPanel implements ActionListener
 
 		List<String> list = new ArrayList<String>();
 		String str = "";
-		String temp = hash_input;
+		String temp = biometric_value;
 		
 		while(!temp.isEmpty())
 		{
